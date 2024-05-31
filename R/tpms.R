@@ -8,19 +8,13 @@
 #'
 #' @export
 
-my_tpms = function(lengths,
-					counts,
-					genenames,
-					samplenames){
-					
-tpm <- do.call(cbind, lapply(1:ncol(counts), function(i){
-    rpk <- counts[,i] / lengths
-    rpk / sum(rpk) * 1e6
-}))
-
-tpm <- as.data.frame(tpm)
-colnames(tpm) <- samplenames
-rownames(tpm) <- genenames
-
+my_tpms = function(lengths, counts,  genenames, samplenames){				
+	tpm <- do.call(cbind, lapply(1:ncol(counts), function(i){
+    		rpk <- counts[,i] / lengths
+    		rpk / sum(rpk) * 1e6
+		}))
+	tpm <- as.data.frame(tpm)
+	colnames(tpm) <- samplenames
+	rownames(tpm) <- genenames
 return(tpm)
 }
