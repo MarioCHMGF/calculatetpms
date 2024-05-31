@@ -1,5 +1,5 @@
-## A function to calculate TPMs from a raw count matrix.
-# Example:
+# A function to calculate TPMs from a raw count matrix.
+## Example:
 ```
 lengths # gene lengths from raw counts or other source
 counts # raw count dataframe
